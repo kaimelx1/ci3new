@@ -22,7 +22,7 @@
                 <td><?= $row['email']; ?></td>
                 <td><?= $row['groups']; ?></td>
                 <td>
-                    <a class="btn btn-primary" href="/ci3/aleksandr_vashchenko_crud/edit/<?= $row['id']; ?>">Edit</a>
+                    <a class="btn btn-primary" href="/ci3/aleksandr_vashchenko_crud/edit/<?= $row['id']; ?>" onclick="event.stopPropagation();">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>
