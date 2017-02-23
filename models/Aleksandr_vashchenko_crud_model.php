@@ -86,7 +86,7 @@ class Aleksandr_vashchenko_crud_model extends CI_Model
     public function add_user()
     {
         return $this->ion_auth->register($this->input->post('username', true), $this->input->post('password', true),
-            $this->input->post('email', true), array(), $_POST['groups']);
+            $this->input->post('email', true), array(), $this->input->post('groups', true));
     }
 
     /**
