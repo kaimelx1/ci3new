@@ -11,8 +11,6 @@ class Aleksandr_vashchenko_crud extends Controller_Base
     public function __construct()
     {
         parent::__construct();
-
-        // Load model
         $this->load->model('Aleksandr_vashchenko_crud_model');
     }
 
@@ -137,7 +135,7 @@ class Aleksandr_vashchenko_crud extends Controller_Base
         $this->load->library('form_validation');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('groups[]', 'Groups', 'required');
+        $this->form_validation->set_rules('groups[]', 'Groups', 'required');
 
         // If there are errors - echo them
         if ($this->form_validation->run() === false) {
