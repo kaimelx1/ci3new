@@ -30,19 +30,19 @@ class Aleksandr_vashchenko_crud_model extends CI_Model
                         OR groups.name LIKE '%" . $this->db->escape_like_str($_GET['search']) . "%'
                         OR users.id LIKE '%" . $this->db->escape_like_str($_GET['search']) . "%'
                         OR users.username LIKE '%" . $this->db->escape_like_str($_GET['search']) . "%'
-                        )";
+                            )";
         }
 
         // SQL Query
         $sql = "SELECT users.id, users.username, users.email, GROUP_CONCAT(groups.name SEPARATOR  '<br>') as groups
-				FROM users
+                FROM users
                 LEFT JOIN users_groups ON users_groups.user_id = users.id
                 LEFT JOIN groups ON users_groups.group_id = groups.id
                 WHERE 1
                 {$where}
                 GROUP BY users.id
                 {$limit}
-				";
+               ";
 
         return $this->db->query($sql)->result_array();
     }
